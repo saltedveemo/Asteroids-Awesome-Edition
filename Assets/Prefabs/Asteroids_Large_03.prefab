@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6903403833255708409}
   - component: {fileID: 817768198127154716}
   - component: {fileID: -7053607166565581668}
+  - component: {fileID: -3649476908209543753}
   m_Layer: 0
   m_Name: Asteroids_Large_03
   m_TagString: Untagged
@@ -191,4 +192,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdcd522d55f815846804ea12e11f9272, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Asteroid
+  currentHealth: 0
+  maxHealth: 1
   collisionDamage: 1
+  chunks:
+  - {fileID: 6125469632309608574, guid: e12eeba92c2e4374b9aaa56c5ee3c0cb, type: 3}
+  - {fileID: 2221695836069046462, guid: 5cf93aa47b9b77e48be33a5d269e337f, type: 3}
+  - {fileID: 7663328091681495684, guid: ff8df44e5d35abe4fbd29ca55db3601c, type: 3}
+  - {fileID: 503101323213367594, guid: ab1cb1a7e06572446bd0a584908c172a, type: 3}
+  - {fileID: 2601457490442957722, guid: d5460f41da4679640b72a7ab699243b4, type: 3}
+  chunkMin: 1
+  chunkMax: 4
+  explodeDist: 0.1
+  explosionForce: 100
+--- !u!114 &-3649476908209543753
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 213619626001563809}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e215ae4c033da8749ae667636cd1313b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ScreenWrap

@@ -1,6 +1,7 @@
 using UnityEngine;
 
 
+
 public class SpaceShip : Entity
 {
     public float enginePower = 10f;
@@ -12,6 +13,7 @@ public class SpaceShip : Entity
 
     public GameObject bulletReference;
     public float bulletSpeed;
+    public float bulletLifeTime = 1f;
     public float fireRate = 0.33f;
     public float fireTimer = 0f;
     public float fireOffset = 10f;
@@ -54,11 +56,6 @@ public class SpaceShip : Entity
 
 
 
-    public void Knockback(float strength, float direction)
-    {
-
-    }
-
     public void FireBullet()
     {
        // float offset = transform.up + fireOffset;
@@ -67,6 +64,7 @@ public class SpaceShip : Entity
 
         Vector2 force = transform.up * bulletSpeed;
         rb.AddForce(force);
+        Destroy(bullet, bulletLifeTime);
     }
 
     private void UpdateFiring()
