@@ -2,12 +2,18 @@ using UnityEngine;
 
 public class Asteroid : Entity
 {
+    public int spawnValue;
     public float collisionDamage = 1f;
     public GameObject[] chunks;
     public int chunkMin = 1;
     public int chunkMax = 4;
     public float explodeDist = 5f;
     public float explosionForce = 50f;
+
+    private void Start()
+    {
+        InitiateSoundManager();
+    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -36,7 +42,10 @@ public class Asteroid : Entity
             {
                 CreateAsteroidChunk();
             }
+            _SM.PlayRandomSound(_SM.explosionSounds);
         }
+
+       
     }
 
     private void CreateAsteroidChunk()

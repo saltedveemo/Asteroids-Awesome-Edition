@@ -19,11 +19,13 @@ public class SpaceShip : Entity
     public float fireOffset = 10f;
     public GameObject firingPoint;
 
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         rb2D = GetComponent<Rigidbody2D>();
         currentHealth = maxHealth;
+        InitiateSoundManager();
     }
 
     // Update is called once per frame

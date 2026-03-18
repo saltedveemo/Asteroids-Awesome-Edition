@@ -15,7 +15,7 @@ public class Collection : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-            _SM.PlayRandomSound();
+            _SM.PlayRandomSound(_SM.collectionSounds);
             Instantiate(particle, transform.position, transform.rotation);
             Destroy(gameObject);
         }
