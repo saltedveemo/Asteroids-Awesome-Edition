@@ -190,6 +190,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Asteroid
   currentHealth: 0
   maxHealth: 0
+  _SM: {fileID: 0}
+  impactSound: {fileID: 0}
+  deathSound: {fileID: 0}
+  isPlayer: 0
+  deathParticle: {fileID: 4434611936757886788, guid: 7f5b88e551a3cde40ad0579392f5c1d5, type: 3}
+  hitParticle: {fileID: 0}
   spawnValue: 2
   collisionDamage: 1
   chunks:

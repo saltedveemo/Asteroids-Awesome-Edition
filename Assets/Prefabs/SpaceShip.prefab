@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6817344282607865950}
   - component: {fileID: 2896803987424722047}
   - component: {fileID: 8323028430519502870}
+  - component: {fileID: 2937959635306827594}
   m_Layer: 0
   m_Name: SpaceShip
   m_TagString: Untagged
@@ -141,12 +142,14 @@ MonoBehaviour:
   _SM: {fileID: 0}
   impactSound: {fileID: 8300000, guid: feafae4cd43d24744a81564dc3d8c64c, type: 3}
   deathSound: {fileID: 8300000, guid: 25aeb2a741aaea84a92e00cc7fb65ac8, type: 3}
+  isPlayer: 1
+  flash: {fileID: 0}
   enginePower: 35015
-  turnPower: 250.1
+  turnPower: 380
   bulletReference: {fileID: 2903520900193473240, guid: b7fb27d4d36b33242bc7871c5105b153, type: 3}
-  bulletSpeed: 500
-  bulletLifeTime: 1
-  fireRate: 0.1
+  bulletSpeed: 750
+  bulletLifeTime: 0.5
+  fireRate: 0.2
   fireTimer: 0
   fireOffset: 10
   firingPoint: {fileID: 4417468916419151412}
@@ -263,7 +266,7 @@ TrailRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.22222243
+        value: 0.20139419
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -323,6 +326,18 @@ TrailRenderer:
   m_Autodestruct: 0
   m_Emitting: 1
   m_ApplyActiveColorSpace: 1
+--- !u!114 &2937959635306827594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1578773372273514358}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e215ae4c033da8749ae667636cd1313b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ScreenWrap
 --- !u!1 &4417468916419151412
 GameObject:
   m_ObjectHideFlags: 0
@@ -380,7 +395,7 @@ Transform:
   m_GameObject: {fileID: 9191830900875152352}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.202, z: 0}
+  m_LocalPosition: {x: 0, y: -0.136, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -435,7 +450,7 @@ TrailRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Time: 0.4
+  m_Time: 0.6
   m_PreviewTimeScale: 1
   m_Parameters:
     serializedVersion: 3
@@ -445,7 +460,7 @@ TrailRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.34028226
+        value: 0.22916776
         inSlope: 0
         outSlope: 0
         tangentMode: 0

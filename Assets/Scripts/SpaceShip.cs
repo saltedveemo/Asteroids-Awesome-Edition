@@ -1,23 +1,34 @@
+using System;
+using Unity.VisualScripting;
 using UnityEngine;
 
+
+enum MyEnum
+{
+    yueayud,
+    gyjda,
+}
 
 
 public class SpaceShip : Entity
 {
+    [Header("Controls")]
     public float enginePower = 10f;
     public float turnPower = 10f;
-
-
-
-    private Rigidbody2D rb2D;
-
-    public GameObject bulletReference;
     public float bulletSpeed;
     public float bulletLifeTime = 1f;
     public float fireRate = 0.33f;
     public float fireTimer = 0f;
     public float fireOffset = 10f;
+    
+    [Header("Components")]
+    private Rigidbody2D rb2D;
+    public GameObject bulletReference;
     public GameObject firingPoint;
+
+    [Header("Type")]
+    [SerializeField] MyEnum myEnum;
+
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
