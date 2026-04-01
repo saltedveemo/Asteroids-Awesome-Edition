@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class CameraImpact : MonoBehaviour
 {
-    public float ease;
     public float shakeDuration = 0.2f;
     public float shakePower = 5f;
     public GameObject camera;

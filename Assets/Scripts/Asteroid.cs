@@ -9,6 +9,7 @@ public class Asteroid : Entity
     public int chunkMax = 4;
     public float explodeDist = 5f;
     public float explosionForce = 50f;
+    public int scoreValue = 1;
 
     private void Start()
     {
@@ -64,5 +65,14 @@ public class Asteroid : Entity
 
         Rigidbody2D rb = chunk.GetComponent<Rigidbody2D>();
             rb.AddForce(dir * explosionForce);
+    }
+
+    private void OnDestroy()
+    {
+        SpaceShip ship = FindFirstObjectByType<SpaceShip>();
+        if (ship != null)
+        {
+            ship.score += scoreValue;
+        }
     }
 }

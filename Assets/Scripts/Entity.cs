@@ -20,21 +20,20 @@ public class Entity : MonoBehaviour
     public void TakeDamage(float damage)
     {
         if (isPlayer) //impact fx
-        {
+            {
             //volume impact
             ImpactGlobalVolume igv = FindAnyObjectByType<ImpactGlobalVolume>();
-            Volume igvv = igv.GetComponent<Volume>();
-            igvv.weight = 1f;
-
+                  Volume igvv = igv.GetComponent<Volume>();
+                  igvv.weight = 1f;
+         
+               igv.Impact();
             //panel flash
             var _sf = FindAnyObjectByType<ScreenFlash>();
             _sf.Flash();
-
+         
             var _cam = FindAnyObjectByType<CameraImpact>();
             _cam.Impact();
         }
-
-
         currentHealth -= damage;
         if (currentHealth <= 0)
         {
@@ -43,10 +42,11 @@ public class Entity : MonoBehaviour
         } 
         else
         {
+            Instantiate(hitParticle, transform.position, transform.rotation);
             _SM.PlaySound(impactSound);
         }
     }
-    public void Death()
+    public virtual void Death()
     {
         Instantiate(deathParticle, transform.position, transform.rotation);
         Destroy(gameObject);

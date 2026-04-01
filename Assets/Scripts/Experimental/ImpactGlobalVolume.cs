@@ -16,4 +16,9 @@ public class ImpactGlobalVolume : MonoBehaviour
     {
         volume.weight = Mathf.Lerp(volume.weight, 0f, ease);
     }
+
+    public void Impact()
+    {
+        volume.weight = 1f;
+    }
 }

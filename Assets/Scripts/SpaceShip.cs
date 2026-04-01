@@ -1,17 +1,16 @@
 using System;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 
-enum MyEnum
-{
-    yueayud,
-    gyjda,
-}
+
 
 
 public class SpaceShip : Entity
 {
+    public int score;
+
     [Header("Controls")]
     public float enginePower = 10f;
     public float turnPower = 10f;
@@ -26,10 +25,8 @@ public class SpaceShip : Entity
     public GameObject bulletReference;
     public GameObject firingPoint;
 
-    [Header("Type")]
-    [SerializeField] MyEnum myEnum;
-
-
+    [Header("UI")]
+    public ScoreUI scoreUI;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -65,7 +62,13 @@ public class SpaceShip : Entity
 
 
 
-
+    public override void Death()
+    {
+        base.Death();
+        GameOver();
+        Instantiate(deathParticle, transform.position, transform.rotation);
+        Destroy(gameObject);
+    }
 
 
 
@@ -89,5 +92,31 @@ public class SpaceShip : Entity
             FireBullet();
             fireTimer = fireRate;
         }
+    }
+
+    public void GameOver()
+    {
+        bool celebrateHighScore = false;
+        if (score > GetHighScore())
+        {
+            SetHighScore(score);
+            celebrateHighScore = true;
+        }
+        scoreUI.Show(celebrateHighScore);
+    }
+
+    private void OnDestroy()
+    {
+        
+    }
+
+    //________helper functions
+    public int GetHighScore()
+    {
+        return PlayerPrefs.GetInt("Hiscore", 0);
+    }
+    public void SetHighScore(int _score)
+    {
+        PlayerPrefs.SetInt("Hiscore", _score);
     }
 }

@@ -204,6 +204,7 @@ MonoBehaviour:
   chunkMax: 4
   explodeDist: 0.1
   explosionForce: 100
+  scoreValue: 1
 --- !u!114 &-7621439548741785078
 MonoBehaviour:
   m_ObjectHideFlags: 0
